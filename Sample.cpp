@@ -57,7 +57,7 @@ int main() {
 
 }
 
-#elif 1
+#elif 0
 
 #include<iostream>
 #include<list>
@@ -115,5 +115,62 @@ int main() {
 	return 0;
 }
 
+
+#elif 1
+
+#include<iostream>
+using namespace std;
+
+#define SIZE 3
+
+class Stack {
+	int pos;
+	int data[SIZE];
+
+public:
+	void init();
+	void push(int val);
+	int pop();
+};
+
+void Stack::init() {
+	pos = 0;
+}
+
+void Stack::push(int val) {
+	if (pos == SIZE) {
+		cout << "Stack Overflow" << endl;
+	}
+	data[pos] = val;
+	pos++;
+}
+
+int Stack::pop() {
+
+	if (pos == 0) {
+		cout << "Stack Underflow" << endl;
+		return 0;
+	}
+
+	pos--;
+	return data[pos];
+
+}
+
+int main() {
+	Stack Obj1;
+	Obj1.init();
+	//Obj1.pop();
+	Obj1.push(1);
+	Obj1.push(2);
+	Obj1.push(3);
+//	Obj1.push(1);
+	for(int i = 0; i<SIZE; i++)
+		cout<<Obj1.pop()<<endl;
+	//cout<<Obj1.pop();
+	//cout<<Obj1.pop();
+//	Obj1.pop();
+	return 0;
+}
 #endif
  
